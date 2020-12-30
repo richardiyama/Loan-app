@@ -9,7 +9,7 @@ export default function AdminPage() {
   const [data, setData] = useState<UserInterface[]>();
   const [selectedUser, setSelectedUser] = useState<string>();
   useEffect(() => {
-    Axios.get("http://localhost:4000/getallusers", {
+    Axios.get("https://rubikpa.herokuapp.com/getallusers", {
       withCredentials: true
     }).then((res : AxiosResponse) => {
       setData(res.data.filter((item : UserInterface) => {
@@ -31,7 +31,7 @@ export default function AdminPage() {
       }
     })
     
-    Axios.post("http://localhost:4000/deleteuser", {
+    Axios.post("https://rubikpa.herokuapp.com/deleteuser", {
       id: userid!
     }, {
       withCredentials: true

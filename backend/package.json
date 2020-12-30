@@ -2,10 +2,14 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "start": "node build/dist/index.js",
     "dev": "nodemon -x ts-node src/index.ts"
+  },
+  "engines": {
+    "node": "14.8.0",
+    "npm":"6.14.7"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +22,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "jsonwebtoken": "^8.5.1",
+    "memorystore": "^1.6.4",
     "mongoose": "^5.10.9",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0"

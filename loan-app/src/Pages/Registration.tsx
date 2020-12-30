@@ -1,6 +1,6 @@
 import React,{useState} from "react"
 import axios, { AxiosResponse } from 'axios'
-import { useHistory } from "react-router-dom";
+import { useHistory,Link } from "react-router-dom";
 import '../style.css';
 
 
@@ -27,7 +27,7 @@ function Registration(){
           phone,
           bvn
         }
-        axios.post("http://localhost:4000/register", informations,{
+        axios.post("https://rubikpa.herokuapp.com/register", informations,{
           
           headers: {'Content-Type' : 'application/json'},
           withCredentials: true
@@ -85,6 +85,7 @@ function Registration(){
 </div>              
               <div className='submit'>
                  <button type="submit" value="submit" name="submit">Register</button>
+                 <p>Already Registered?<Link className="nav-link" to="/login">Login</Link></p>
               </div>
               </form>
      </div>

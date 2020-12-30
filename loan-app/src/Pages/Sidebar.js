@@ -1,9 +1,21 @@
 import React from 'react';
+import { Link } from "react-router-dom";
+import Axios from 'axios'
 //  Bootstrap
 import 'bootstrap/dist/css/bootstrap.css';
 import '../Sidebar.css';
 //  Sidebar component that holds cached amounts and tenure
 const Sidebar = (props) => {
+
+    const logout = () => {
+        Axios.get("https://rubikpa.herokuapp.com/logout", {
+          withCredentials: true
+        }).then(res => {
+          if (res.data === "success") {
+            window.location.href = "/";
+          }
+        })
+      }
     //  Variable to hold a list of cards having cached amount and tenure
     let cacheAmountDisplay = null;
     //  If only amounts and tenure is cached
@@ -42,6 +54,7 @@ const Sidebar = (props) => {
                                                 Delete
                                             </button>
                                         </div>
+                                         <Link className="nav-link active" onClick={logout}  to="/logout">Logout</Link>
                                     </div>
                                 </div>
                             </div>

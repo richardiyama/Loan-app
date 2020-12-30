@@ -1,20 +1,12 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { myContext } from '../Pages/Context'
-import Axios, { AxiosResponse } from 'axios';
+
 import "../main.css";
 export default function NavBar() {
   const ctx = useContext(myContext);
 
-  const logout = () => {
-    Axios.get("http://localhost:4000/logout", {
-      withCredentials: true
-    }).then((res : AxiosResponse) => {
-      if (res.data === "success") {
-        window.location.href = "/";
-      }
-    })
-  }
+  
   return (
     <div className="site-navbar py-4 js-sticky-header site-navbar-target shrink nav-position" role="banner">
 
@@ -37,18 +29,23 @@ export default function NavBar() {
               <ul className="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block ml-0 pl-0">
               {ctx ? (
         <>
-                <li> <Link className="nav-link active" onClick={logout} to="/logout">Logout</Link></li>
+                
                 {ctx.isAdmin ? ( <li><Link className="nav-link" to="/admin">Admin</Link></li>) : null}
                 
-                
+               
                 </>
+                
       ) : (
         <>
-                <li><Link className="nav-link" to="/login">Login</Link></li>
-                <li> <Link className="nav-link" to="/register">Register</Link></li>
+       
+     
+               
                 </>
       )
       }
+           
+                <li> <Link className="nav-link" to="/register">Register</Link></li>
+
        <li><Link className="nav-link" to="/">Home</Link></li>
               </ul>
             </nav>

@@ -63,12 +63,12 @@ var app = express_1.default();
 //app.use(express.json());
 app.use(body_parser_1.default.json());
 app.use(body_parser_1.default.urlencoded({ extended: true }));
-app.use(cors_1.default({ origin: "http://localhost:3000", credentials: true }));
-app.use(express_session_1.default({
-    secret: "secretcode",
-    resave: true,
-    saveUninitialized: true,
-}));
+app.use(cors_1.default({ origin: "https://5fecc021a3064b0e4b8f11a4--rubikloan.netlify.app", credentials: true }));
+//app.use(express_session_1.default({
+  //  secret: "secretcode",
+  //  resave: true,
+  //  saveUninitialized: true,
+//}));
 app.use(cookie_parser_1.default());
 app.use(passport_1.default.initialize());
 app.use(passport_1.default.session());
@@ -212,7 +212,7 @@ app.get("/getallusers", isAdministratorMiddleware, function (req, res) { return 
         }
     });
 }); });
-app.listen(4000, function () {
+app.listen(process.env.PORT || 4000, function () {
     console.log("Server Started");
 });
 //# sourceMappingURL=index.js.map

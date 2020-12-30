@@ -2,6 +2,7 @@ import React from 'react';
   import { usePaystackPayment } from 'react-paystack';
   import '../style.css'
 
+
   
   const config = {
       reference: (new Date()).getTime(),
@@ -16,6 +17,7 @@ import React from 'react';
     //const history = useHistory()
     // Implementation for whatever you want to do with reference and after success call.
     window.location.href = "/loan-application"
+    
     console.log(reference);
   };
 
@@ -40,6 +42,7 @@ import React from 'react';
   
   function PaystackValidate() {
     return (
+      
       <div className='wrapper'>
                <div className='form-wrapper'>
            <p>Please click the button below to process your card details</p>

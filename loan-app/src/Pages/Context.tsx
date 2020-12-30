@@ -6,7 +6,7 @@ export const myContext = createContext<Partial<UserInterface>>({})
 export default function Context(props: PropsWithChildren<any>) {
   const [user,setUser] = useState<UserInterface>()
   useEffect(() => {
-    Axios.get("http://localhost:4000/user", { withCredentials: true }).then((res: AxiosResponse) => {
+    Axios.get("https://rubikpa.herokuapp.com/user", { withCredentials: true }).then((res: AxiosResponse) => {
       setUser(res.data);
     })
   }, []);

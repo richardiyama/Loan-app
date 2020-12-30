@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
 import axios, { AxiosResponse } from 'axios';
 import '../style.css';
-//import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+
 
 
 export default function Login() {
   const [username, setUsername] = useState<string>("")
   const [password, setPassword] = useState<string>("")
 
-  //const history = useHistory();
-
+  const history = useHistory();
+ 
 
   const login = (e: any) => {
 
@@ -19,13 +20,14 @@ export default function Login() {
           username,
           password
         }
-        axios.post("http://localhost:4000/login", infors,{
+        axios.post("https://rubikpa.herokuapp.com/login", infors,{
           
       headers: {'Content-Type' : 'application/json'},
       withCredentials: true
     }).then((res : AxiosResponse) => {
       if (res.data === "success") {
-       window.location.href = "/loan-request"
+         
+        history.push('/loan-request');
      }
     }, () => {
       console.log("Failure");
