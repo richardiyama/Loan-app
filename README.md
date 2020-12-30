@@ -11,7 +11,9 @@ A Basic Loan App
 
 ## Request Loan Page
 
-<img src="https://github.com/richardiyama/Loan-app/blob/master/loan-app/public/images/RequestLoan.JPG" height="400" />
+<img src="https://github.com/richardiyama/Loan-app/blob/master/loan-app/public/images/Process.JPG" height="400" />
+
+<img src="https://github.com/richardiyama/Loan-app/blob/master/loan-app/public/images/Payment.JPG" height="400" />
 
 ## Login Page
 
