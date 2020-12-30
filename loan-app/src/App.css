@@ -1,0 +1,29 @@
+/* Content window adjacent to sidebar */
+.content {
+  height: 100vh;
+  margin-left: 300px;
+  background:  rgba(0, 0, 0, 0) url("/images/Carbon.png") repeat scroll 0% 0%;
+}
+/* Max width of form and details content */
+.max-width-form {
+  max-width: 600px !important;
+}
+/* Height fix for header */
+.h-60px {
+  height: 60px !important;
+}
+/* Font size */
+.font-size-large {
+  font-size: large !important;
+}
+/* Cursor pointer */
+.cursor-pointer {
+  cursor: pointer;
+}
+/* Viewport width of max 720px - tablet view */
+@media screen and (max-width: 720px) {
+  /* Set content margin left 0 as sidebar disappears */
+  .content {
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,19 @@
+/* Burger menu icon */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+.bar1, .bar2, .bar3 {
+    width: 30px;
+    height: 3px;
+    background-color: whitesmoke;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+/* Viewport max width of 720px - tablet view */
+@media screen and (max-width: 720px) {
+    /* Burger menu icon */
+    .burger {
+        display: block;
+    }
+}
